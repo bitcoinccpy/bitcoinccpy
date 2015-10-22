@@ -27,15 +27,15 @@ public:
         pchMessageStart[1] = 0x04;
         pchMessageStart[2] = 0x04;
         pchMessageStart[3] = 0x04;
-        nDefaultPort = 5530;
-        nRPCPort = 5531;
+        nDefaultPort = mydefport;
+        nRPCPort = myrpcport;
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 20);
-        nSubsidyHalvingInterval = 100000;
+        nSubsidyHalvingInterval = ihalving;
 
         // Build the genesis block. Note that the output of the genesis coinbase cannot
         // be spent as it did not originally exist in the database.
   
-        const char* pszTimestamp = "ABCCoin";
+        const char* pszTimestamp = "thepszt";
         CTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -46,7 +46,7 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime    = 1300000000;
+        genesis.nTime    = mygenesist;
         genesis.nBits    = 0x1e0fffff;
         genesis.nNonce   = 0;
         
@@ -69,7 +69,7 @@ public:
         vSeeds.push_back(CDNSSeedData("someaddress.com or IP addy", "someaddress.com"));
 
 
-        base58Prefixes[PUBKEY_ADDRESS] = 36;
+        base58Prefixes[PUBKEY_ADDRESS] = mylater;
         base58Prefixes[SCRIPT_ADDRESS] = 30;
         base58Prefixes[SECRET_KEY] = 224;
 
